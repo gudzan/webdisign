@@ -21,65 +21,74 @@
 
   <form action="http://www.blackgoosebistro.com/pizza.php" method="post">
 
-    Your Information
-    <ul>
-      <li>Name: <input type="text" name="customername"></li>
-      <li>Address: <input type="text" name="address"></li>
-      <li>Telephone Number: <input type="tel" name="telephone"></li>
-      <li>Email: <input type="email" name="email"></li>
-      <li>Delivery instructions: <br>
-        <textarea name="instructions" cols="30" rows="10" maxlength="400"
-          placeholder="No more than 400 characters long"></textarea>
-      </li>
-    </ul>
-
+    <fieldset>
+      <legend>Your Information</legend>
+      <ul>
+        <li><label for="form-name">Name:</label><input type="text" name="customername" id="form-name"></li>
+        <li><label for="form-address">Address:</label> <input type="text" name="address" id="form-address"></li>
+        <li><label for="form-tel">Telephone Number:</label> <input type="tel" name="telephone" id="form-tel"></li>
+        <li><label for="form-email">Email:</label> <input type="email" name="email" id="form-email"></li>
+        <li>Delivery instructions: <br>
+          <textarea name="instructions" cols="30" rows="10" maxlength="400" id="form-story"
+            placeholder="No more than 400 characters long"></textarea>
+        </li>
+      </ul>
+    </fieldset>
 
     <h2>Design Your Dream Pizza:</h2>
 
-    <p>Pizza specs
-    <p>
+    <fieldset>
+      <legend>Pizza specs</legend>
+      <fieldset>
+        <legend>Crust <em>(Choose one)</em>:</legend>
+        <ul>
+          <li><label><input type="radio" name="crust" value="white"> Classic white</label></li>
+          <li><label><input type="radio" name="crust" value="multigrain"> Multigrain</label></li>
+          <li><label><input type="radio" name="crust" value="cheese crust"> Cheese-stuffed crust</label></li>
+          <li><label><input type="radio" name="crust" value="gluten free"> Gluten-free</label></li>
+        </ul>
+      </fieldset>
 
-    <p>Crust <em>(Choose one)</em>:</p>
-    <ul>
-      <li><input type="radio" name="crust" value="Classic white"> Classic white</li>
-      <li><input type="radio" name="crust" value="Multigrain"> Multigrain</li>
-      <li><input type="radio" name="crust" value="Cheese-stuffed crust"> Cheese-stuffed crust</li>
-      <li><input type="radio" name="crust" value="Gluten-free"> Gluten-free</li>
-    </ul>
+      <br>
 
-    <p>Toppings <em>(Choose as many as you want)</em>:</p>
-    <ul>
-      <li><input type="checkbox" name="toppings[]" value="Red sauce"> Red sauce</li>
-      <li><input type="checkbox" name="toppings[]" value="White sauce"> White sauce</li>
-      <li><input type="checkbox" name="toppings[]" value="Mozzarella Cheese"> Mozzarella Cheese</li>
-      <li><input type="checkbox" name="toppings[]" value="Pepperoni"> Pepperoni</li>
-      <li><input type="checkbox" name="toppings[]" value="Mushrooms"> Mushrooms</li>
-      <li><input type="checkbox" name="toppings[]" value="Peppers"> Peppers</li>
-      <li><input type="checkbox" name="toppings[]" value="Anchovies"> Anchovies</li>
-    </ul>
+      <fieldset>
+        <legend>Toppings <em>(Choose as many as you want)</em>:</legend>
+        <ul>
+          <li><label><input type="checkbox" name="toppings[]" value="red sauce" checked> Red sauce</label></li>
+          <li><label><input type="checkbox" name="toppings[]" value="white sauce"> White sauce</label></li>
+          <li><label><input type="checkbox" name="toppings[]" value="mozzarella"> Mozzarella Cheese</label></li>
+          <li><label><input type="checkbox" name="toppings[]" value="pepperoni"> Pepperoni</label></li>
+          <li><label><input type="checkbox" name="toppings[]" value="mushrooms"> Mushrooms</label></li>
+          <li><label><input type="checkbox" name="toppings[]" value="peppers"> Peppers</label></li>
+          <li><label><input type="checkbox" name="toppings[]" value="anchovies"> Anchovies</label></li>
+        </ul>
+      </fieldset>
+      <br>
+      <fieldset>
+        <legend>Number</legend>
+        <p>How many pizzas:
+          <select name="pizzas" size="1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+          </select>
+        </p>
 
-    <p>Number</p>
-    <p>How many pizzas:
-      <select name="pizzas" size="1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-        <option>6</option>
-      </select>
-    </p>
-
-    <p>How many pizzas:
-       <input type="text" list="pizzas" name="pizzas"> 
-       <datalist id="pizzas">
-        <option value="1">
-        <option value="2">
-        <option value="3">
-        <option value="4">
-      </datalist>
-    </p>
-
+        <p>How many pizzas:
+          <input type="text" list="pizzas" name="pizzas">
+          <datalist id="pizzas">
+            <option value="1">
+            <option value="2">
+            <option value="3">
+            <option value="4">
+          </datalist>
+        </p>
+      </fieldset>
+    </fieldset>
+    <label>Your favorite color: <input type="color" name="favorite"></label>
     <p>
       <input type="submit" value="Bring me a pizza!">
       <input type="reset" value="Reset">
