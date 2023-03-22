@@ -50,6 +50,9 @@ header h1 {
   margin-top: 1.5em;
 }
 
+/*nav {
+  position: fixed;
+}*/
 
 /* nav styles */
 nav, footer {
